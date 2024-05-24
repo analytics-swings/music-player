@@ -11,7 +11,7 @@ let currentFolder = '';
 let songs = [];
 
 async function fetchDirectoryStructure() {
-	const response = await fetch('path_to_your_json_file.json');
+	const response = await fetch('music-data.json');
 	return await response.json();
 }
 
