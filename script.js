@@ -17,7 +17,7 @@ async function fetchDirectoryStructure() {
 
 function loadSong(index) {
 	audio.src = songs[index];
-	currentSongElement.textContent = songs[index].split('/').pop();
+	currentSongElement.textContent = decodeURIComponent(songs[index].split('/').pop());
 }
 
 function playSong() {
@@ -67,7 +67,7 @@ function renderPlaylist() {
 	playlistDiv.innerHTML = '';
 	songs.forEach((song, index) => {
 		const songElement = document.createElement('div');
-		songElement.textContent = song.split('/').pop();
+		songElement.textContent = decodeURIComponent(song.split('/').pop());
 		songElement.addEventListener('click', () => {
 			currentSongIndex = index;
 			loadSong(currentSongIndex);
